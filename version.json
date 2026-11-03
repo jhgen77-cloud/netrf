@@ -1,0 +1,1 @@
+{"version": "0.29", "code": 29, "apk": "netrf-0.29.apk", "date": "2026-11-26", "notes": "AP 찾기 — 앞부분이 같은 긴 AP 이름이 한 AP 로 합쳐지던 것 고침 · 가까운 Radio MAC 이름 · 한글 자판으로 친 MAC 도 검색", "notes_en": "Find tab — long AP names are compared in full (similar names no longer merge into one AP), the closest Radio MAC wins, a"}
