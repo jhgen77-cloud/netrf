@@ -1,0 +1,45 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0c0f"><title>NetRF 받기</title><style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#0a0c0f;color:#dbe2ea;font-family:system-ui,sans-serif;display:flex;justify-content:center;align-items:center;padding:32px 16px}
+main{width:100%;max-width:400px;display:flex;flex-direction:column;gap:14px}
+.head{display:flex;align-items:center;gap:14px}.mark{width:56px;height:56px;border:1px solid #232a33;background:#11151a;display:flex;align-items:center;justify-content:center}
+h1{margin:0;font-size:22px;font-weight:800}h1 b{color:#22c3ee}.sub{margin:2px 0 0;color:#8a94a3;font-size:13px}
+.get{display:flex;flex-direction:column;align-items:center;gap:2px;padding:14px;border-radius:3px;text-decoration:none;color:#04161b;background:#22c3ee}
+.get b{font-size:17px}.get span{font-size:13px;font-family:ui-monospace,monospace}
+.card{border:1px solid #232a33;background:#11151a;padding:12px 16px}
+ol{margin:0;padding-left:20px;color:#c4ccd6;font-size:14px;line-height:1.8}
+h2{margin:0 0 8px;font-size:15px}.t{margin:0;color:#8a94a3;font-size:13px;line-height:1.65}.t b{color:#dbe2ea}.need{display:grid;gap:8px;margin:0;padding:0;list-style:none}.need li{display:flex;gap:10px;font-size:14px;line-height:1.55;color:#c4ccd6}.need i{flex:none;font-style:normal;width:22px;color:#22c3ee}.need small{display:block;color:#8a94a3;font-size:12.5px}
+summary{cursor:pointer;color:#38bdf8;font-size:13px;margin-top:10px}details ol{margin-top:8px;font-size:13px;line-height:1.7}.ghost{padding:11px;background:#18202b;color:#e6edf5;border:1px solid #2a3340}
+</style></head><body><main>
+<div class="head"><div class="mark"><svg width="44" height="44" viewBox="20 24 68 62"><rect x="26" y="30" width="30" height="6" fill="#3B82F6"/><rect x="58" y="30" width="24" height="6" fill="#22C3EE"/><path d="M57 40V80" stroke="#fff" stroke-opacity=".5" stroke-width="2"/><path d="M26 48 36 52 46 60 56 68M58 46 70 49 82 48" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M26 72h56" stroke="#FF5A4F" stroke-width="2.5" stroke-dasharray="6 4"/></svg></div>
+<div><h1>Net<b>RF</b></h1><p class="sub">전문가용 무선 측정 · Wi-Fi roaming trace</p></div></div>
+<a class="get" href="netrf-0.27.apk"><b>받기</b><span>0.27 · 11/5 20:23</span></a>
+<div class="card"><h2>준비물</h2><ul class="need"><li><i>①</i><span><b>안드로이드 패드·폰</b> — NetRF 를 깔아 들고 다니며 잽니다.</span></li><li><i>②</i><span><b>윈도우 PC·노트북 한 대</b>(측정 서버) — 사업장 <b>유선(랜선)</b>에 꽂아 두고 netrf-server.exe 를 켭니다.<small>패드 ↔ AP ↔ 유선 ↔ PC 사이 속도 = <b>무선 구간</b>만의 속도를 재는 상대입니다. 없으면 인터넷 속도만 재서, 느릴 때 와이파이 탓인지 회선 탓인지 가르기 어렵습니다.</small></span></li></ul></div>
+<div class="card"><ol><li>크롬으로 열어 받기(Google 앱 안에서는 멈춤)</li><li>받은 파일 열기 → 설치</li><li>처음 실행 때 위치 권한 허용(BSSID 읽기용)</li><li>로밍 기록은 이 기기 안에만, 측정 끝나고 <b>8시간 뒤 저절로 지움</b> — 서버로 보내거나 꺼내는 기능 없음</li><li>설치가 막히면(사업장 MDM 정책) 개인 폰으로도 됩니다</li></ol></div>
+<div class="card"><h2>측정 서버 켜기(윈도우 PC)</h2><ol>
+<li>PC·노트북을 사업장 <b>유선</b>(벽 랜 포트·스위치)에 꽂는다 — 와이파이로만 붙으면 무선을 두 번 타서 값이 섞인다</li>
+<li>아래 netrf-server.exe 를 받아 <b>마우스 오른쪽 → 관리자 권한으로 실행</b>(설치 없음)</li>
+<li>창에 <b>유선 http://&lt;IP&gt;:8098</b> 이 보이면 준비 끝 — 켜 둔 채로</li>
+<li>패드 NetRF → 속도 탭 → <b>속도 측정 시작</b> — 같은 망이면 서버를 저절로 찾습니다</li>
+<li><b>무선 컨트롤러(WLC)를 쓰는 망</b>(회사망 대부분)은 단말의 방송을 버려 저절로 못 찾습니다 → NetRF <b>⚙ → 무선 구간 서버</b>에 창에 보이는 <b>http://&lt;IP&gt;:8098</b> 을 넣고 측정(한 번 넣으면 기억 — 늘 같은 PC 를 쓰면 편함)</li>
+<li>끝나면 창 닫기(30분 동안 측정이 없으면 저절로 꺼짐)</li></ol>
+<a class="get ghost" style="margin-top:12px" href="netrf-server.exe"><b>윈도우용 netrf-server.exe</b><span>약 5 MB · 받은 데이터는 저장하지 않음</span></a>
+<p class="t" style="margin-top:10px">관리자 권한으로 켜야 방화벽을 저절로 열고 닫을 때 지웁니다(사업장 유선은 보통 "공용 네트워크"라 그냥 켜면 패드가 못 붙기 쉽습니다). "Windows의 PC 보호" 창이 뜨면 추가 정보 → 실행. 리눅스: <a style="color:#38bdf8" href="netrf-server-linux">netrf-server-linux</a></p>
+<details><summary>회사 PC 라 exe 를 못 받을 때(파이썬)</summary><ol>
+<li>PC 에 파이썬 3 이 있으면 <a style="color:#38bdf8" href="speed-server.py">speed-server.py</a> 를 받아 그 폴더에서 <b>python speed-server.py</b>(설치 없음) — 창에 뜬 <b>http://&lt;IP&gt;:8098</b> 을 NetRF ⚙ 에</li>
+<li>파이썬 판은 방화벽을 스스로 열지 않습니다. 방화벽이 켜진 PC 면 <b>관리자 명령 프롬프트</b>에서 8098 만 엽니다:<br><b style="font-family:ui-monospace,monospace;font-size:12px;word-break:break-all">netsh advfirewall firewall add rule name=NetRF-8098 dir=in action=allow protocol=TCP localport=8098 profile=any</b></li>
+<li>다 쓰면 닫기: <b style="font-family:ui-monospace,monospace;font-size:12px;word-break:break-all">netsh advfirewall firewall delete rule name=NetRF-8098</b></li></ol></details>
+<details><summary>리눅스 서버에 상시로 띄우기(파이썬·도커)</summary><ol>
+<li>파이썬 3 만 있으면: <a style="color:#38bdf8" href="speed-server.py">speed-server.py</a> 받아 <b>python3 speed-server.py</b>(설치 없음, 표준 라이브러리만)</li>
+<li>도커: <a style="color:#38bdf8" href="netrf-server-docker.zip">netrf-server-docker.zip</a> 풀고 그 폴더에서 <b>docker compose up -d</b> — 재부팅해도 다시 뜸</li>
+<li>서버는 유선·무선 단말과 다른 VLAN 인 경우가 많아 자동 찾기가 안 됩니다 — NetRF ⚙ → 무선 구간 서버에 <b>http://&lt;서버 IP&gt;:8098</b>, 방화벽은 TCP 8098</li></ol></details>
+<details><summary>패드가 서버를 못 찾을 때</summary><ol>
+<li>PC 브라우저 <b>http://localhost:8098/__info</b> — 글자가 나오면 서버는 정상</li>
+<li>패드 브라우저 <b>http://&lt;창의 IP&gt;:8098/__info</b> — 열리면 서버·망은 정상, NetRF ⚙ 의 주소(IP·포트)를 다시 확인</li>
+<li>안 열리면 방화벽(관리자 권한으로 다시) 또는 무선 → 유선이 막힌 망(손님 SSID·다른 VLAN·ACL) — PC 를 무선 단말과 같은 VLAN 포트에 꽂거나, 망 담당자에게 무선 대역 → PC TCP 8098 허용을 부탁</li>
+<li>관리자 권한이 없는 회사 PC 는 PC 담당자에게 netrf-server.exe 방화벽 허용(또는 TCP 8098)을 부탁</li>
+<li><b>한 PC 는 되고 다른 PC 는 안 될 때</b>는 먼저 무선 컨트롤러 ACL(PC IP 별 허용)을 의심 — 된 PC 브라우저에서 <b>http://&lt;안 된 PC IP&gt;:8098/__down?bytes=1000</b> 이 열리면(유선끼리라 WLC 를 안 탐) 그 PC 는 정상이고, 무선 쪽 ACL 에 그 IP 가 없는 것</li></ol></details></div>
+<div class="card"><h2>의견 보내기</h2><p class="t">써 보시고 이상한 곳·바라는 것은 <b>화면 캡처</b>와 함께 메일로 보내 주세요. 앱 <b>⚙ → 의견 보내기</b>를 누르면 판 번호·기기가 적힌 채로 메일이 열립니다(측정값은 들어가지 않음).</p>
+<a class="get ghost" style="margin-top:12px" id="fb" data-u="netrf.feedback" data-d="gmail.com" href="#"><b>메일 보내기</b><span id="fbTo">—</span></a></div>
+<script>(function(){var a=document.getElementById('fb'),m=a.dataset.u+'@'+a.dataset.d;a.href='mailto:'+m+'?subject='+encodeURIComponent('NetRF 0.27 의견');document.getElementById('fbTo').textContent=m;})();</script>
+</main></body></html>
